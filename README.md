@@ -13,3 +13,5 @@ jobs:
 ```
 
 `v1` moves along the `v1.x.y` releases, so a fix reaches every mod; only a breaking change makes a `v2`.
+
+`with: drhl-version: <tag>` runs that DRH Launcher release instead of the latest, a pre-release to test one.

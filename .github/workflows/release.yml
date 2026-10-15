@@ -5,6 +5,11 @@ name: Release a DRH mod
 
 on:
   workflow_call:
+    inputs:
+      drhl-version:
+        description: A DRH Launcher release tag (a pre-release, to test one); empty, the latest.
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -18,9 +23,10 @@ jobs:
       - name: Download DRH Launcher
         env:
           GH_TOKEN: ${{ github.token }}
+          DRHL_VERSION: ${{ inputs.drhl-version }}
         run: |
           cd "$RUNNER_TEMP"
-          gh release download --repo Tutez64/DRH-Launcher --pattern '*.AppImage' --pattern SHA256SUMS
+          gh release download $DRHL_VERSION --repo Tutez64/DRH-Launcher --pattern '*.AppImage' --pattern SHA256SUMS
           sha256sum --check --ignore-missing SHA256SUMS
           mv ./*.AppImage drhl.AppImage
           chmod +x drhl.AppImage
