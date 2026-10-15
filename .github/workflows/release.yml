@@ -30,6 +30,8 @@ jobs:
           sha256sum --check --ignore-missing SHA256SUMS
           mv ./*.AppImage drhl.AppImage
           chmod +x drhl.AppImage
+          # The launcher links fontconfig even without its window.
+          ldconfig -p | grep -q libfontconfig.so.1 || { sudo apt-get update && sudo apt-get install -y libfontconfig1; }
 
       # The runner has no FUSE: the AppImage extracts itself instead.
       # On a tag that is not v<version>, --pack-mod refuses to pack.
