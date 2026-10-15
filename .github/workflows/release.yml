@@ -1,4 +1,4 @@
-# Called by a mod's own workflow on a version tag (DRH-Mod-Template's
+# Called by a mod's own workflow on a version tag (DRH-Mods-Template's
 # .github/workflows/release.yml): packs the mod with the latest DRH Launcher
 # and drafts a GitHub release with its zip and index entry.
 name: Release a DRH mod
