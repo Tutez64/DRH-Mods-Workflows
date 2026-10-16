@@ -2,7 +2,7 @@
 
 The release workflow of [Dungeon Rampage Haxe](https://github.com/Tutez64/Dungeon-Rampage-Haxe) mods. A mod made from [DRH-Mods-Template](https://github.com/Tutez64/DRH-Mods-Template) already calls it; nothing here is copied into a mod.
 
-On a tag `vX.Y.Z` equal to the `version` of its `mod.json`, it runs `--pack-mod` from the latest [DRH Launcher](https://github.com/Tutez64/DRH-Launcher) release and drafts a GitHub release with the mod's zip and index entry. The author tests that zip, publishes the release, then runs `--submit-mod`. The steps are in DRH's [modding document](https://github.com/Tutez64/Dungeon-Rampage-Haxe/blob/master/docs/modding.md#mod-repository).
+On a tag `vX.Y.Z` equal to the `version` of its `mod.json`, it runs `--pack-mod` from the latest [DRH Launcher](https://github.com/Tutez64/DRH-Launcher) release (until 0.4.0, the most recent one, a pre-release included) and drafts a GitHub release with the mod's zip and index entry. The author tests that zip, publishes the release, then runs `--submit-mod`. The steps are in DRH's [modding document](https://github.com/Tutez64/Dungeon-Rampage-Haxe/blob/master/docs/modding.md#mod-repository).
 
 A mod calls it at the moving tag `v1`:
 
@@ -14,4 +14,4 @@ jobs:
 
 `v1` moves along the `v1.x.y` releases, so a fix reaches every mod; only a breaking change makes a `v2`.
 
-`with: drhl-version: <tag>` runs that DRH Launcher release instead of the latest, a pre-release to test one.
+`with: drhl-version: <tag>` runs that DRH Launcher release instead, a pre-release to test one.
